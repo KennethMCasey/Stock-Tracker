@@ -1,5 +1,5 @@
 //
-//  GLOBAL.swift
+//  MyStocksModel.swift
 //  FinalProject
 //
 //  Created by Kenny Casey on 5/4/19.
@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-struct GLOBAL {
-   static let APIKey = "F5F2RN5H1P2FICV6"
-}

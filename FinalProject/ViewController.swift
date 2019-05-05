@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var test = StockHistory(companySymbol: "MSFT", interval: .day)
+        print(test.getStockData())
     }
 
 
