@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FinalProject.xcodeproj">
+      location = "group:../../../../../Library/Mobile Documents/com~apple~CloudDocs/Stock.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
