@@ -19,6 +19,16 @@
 		2A552B69227E883400A6EA92 /* MyStocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B68227E883400A6EA92 /* MyStocksModel.swift */; };
 		2A552B6B227E889F00A6EA92 /* PortfolioValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B6A227E889F00A6EA92 /* PortfolioValueTableViewCell.swift */; };
 		2A552B6D227E88C800A6EA92 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B6C227E88C800A6EA92 /* StockTableViewCell.swift */; };
+		2A552B77227E95C500A6EA92 /* PortfolioValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B76227E95C500A6EA92 /* PortfolioValueViewController.swift */; };
+		2A552B79227E95E300A6EA92 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B78227E95E300A6EA92 /* StockDetailViewController.swift */; };
+		2A552B7C227E971A00A6EA92 /* PortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B7B227E971A00A6EA92 /* PortfolioModel.swift */; };
+		2A552B7E227E973700A6EA92 /* StockDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B7D227E973700A6EA92 /* StockDetailModel.swift */; };
+		2A552B88227E990C00A6EA92 /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B87227E990C00A6EA92 /* AddStockViewController.swift */; };
+		2A552B8A227E991700A6EA92 /* AddStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B89227E991700A6EA92 /* AddStockModel.swift */; };
+		2A552B8C227E992100A6EA92 /* DeleteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */; };
+		2A552B8E227E992E00A6EA92 /* DeleteStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */; };
+		2A552B90227E993E00A6EA92 /* ModifyStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */; };
+		2A552B92227E994A00A6EA92 /* ModifyStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */; };
 		2AD1AF1D227B898E009BDA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */; };
 		2AD1AF1F227B898E009BDA20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AF1E227B898E009BDA20 /* ViewController.swift */; };
 		2AD1AF22227B898E009BDA20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AF20227B898E009BDA20 /* Main.storyboard */; };
@@ -63,6 +73,16 @@
 		2A552B68227E883400A6EA92 /* MyStocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStocksModel.swift; sourceTree = "<group>"; };
 		2A552B6A227E889F00A6EA92 /* PortfolioValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioValueTableViewCell.swift; sourceTree = "<group>"; };
 		2A552B6C227E88C800A6EA92 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
+		2A552B76227E95C500A6EA92 /* PortfolioValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioValueViewController.swift; sourceTree = "<group>"; };
+		2A552B78227E95E300A6EA92 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
+		2A552B7B227E971A00A6EA92 /* PortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioModel.swift; sourceTree = "<group>"; };
+		2A552B7D227E973700A6EA92 /* StockDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailModel.swift; sourceTree = "<group>"; };
+		2A552B87227E990C00A6EA92 /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
+		2A552B89227E991700A6EA92 /* AddStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockModel.swift; sourceTree = "<group>"; };
+		2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockViewController.swift; sourceTree = "<group>"; };
+		2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockModel.swift; sourceTree = "<group>"; };
+		2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockViewController.swift; sourceTree = "<group>"; };
+		2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockModel.swift; sourceTree = "<group>"; };
 		2AD1AF19227B898E009BDA20 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD1AF1E227B898E009BDA20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +128,130 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A552B6E227E8A7000A6EA92 /* StockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				2AF48B91227BF63B005FBA98 /* StockHistoryInterval.swift */,
+				2AF48B8D227BE787005FBA98 /* Stock.swift */,
+				2AF48B8F227BE7E5005FBA98 /* StockHistory.swift */,
+			);
+			path = StockClasses;
+			sourceTree = "<group>";
+		};
+		2A552B6F227E8AC700A6EA92 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B84227E98CA00A6EA92 /* AddStock */,
+				2A552B85227E98D900A6EA92 /* DeleteStock */,
+				2A552B86227E98E100A6EA92 /* ModifyStock */,
+				2A552B70227E8AF100A6EA92 /* TableView */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2A552B70227E8AF100A6EA92 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B71227E8B0C00A6EA92 /* Cells */,
+				2A552B5A227E7DB500A6EA92 /* SettingsModel.swift */,
+				2A552B58227E7D9600A6EA92 /* SettingsTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		2A552B71227E8B0C00A6EA92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B5C227E7F1800A6EA92 /* AddStockTableViewCell.swift */,
+				2A552B60227E7F3800A6EA92 /* ModifyStockTableViewCell.swift */,
+				2A552B5E227E7F2600A6EA92 /* DeleteStockTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2A552B72227E8B9E00A6EA92 /* MyStocks */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B83227E985400A6EA92 /* StockDetail */,
+				2A552B7A227E96F300A6EA92 /* Portfolio */,
+				2A552B73227E8BC200A6EA92 /* TabelView */,
+			);
+			path = MyStocks;
+			sourceTree = "<group>";
+		};
+		2A552B73227E8BC200A6EA92 /* TabelView */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B66227E87F600A6EA92 /* MyStocksTableViewController.swift */,
+				2A552B68227E883400A6EA92 /* MyStocksModel.swift */,
+				2A552B74227E8BD400A6EA92 /* Cells */,
+			);
+			path = TabelView;
+			sourceTree = "<group>";
+		};
+		2A552B74227E8BD400A6EA92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B6A227E889F00A6EA92 /* PortfolioValueTableViewCell.swift */,
+				2A552B6C227E88C800A6EA92 /* StockTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2A552B75227E8C1300A6EA92 /* Misc. */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AF4D227B8CCA009BDA20 /* SwiftyJSON.swift */,
+				2A552B56227E65A000A6EA92 /* GLOBAL.swift */,
+			);
+			path = Misc.;
+			sourceTree = "<group>";
+		};
+		2A552B7A227E96F300A6EA92 /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B76227E95C500A6EA92 /* PortfolioValueViewController.swift */,
+				2A552B7B227E971A00A6EA92 /* PortfolioModel.swift */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		2A552B83227E985400A6EA92 /* StockDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B7D227E973700A6EA92 /* StockDetailModel.swift */,
+				2A552B78227E95E300A6EA92 /* StockDetailViewController.swift */,
+			);
+			path = StockDetail;
+			sourceTree = "<group>";
+		};
+		2A552B84227E98CA00A6EA92 /* AddStock */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B87227E990C00A6EA92 /* AddStockViewController.swift */,
+				2A552B89227E991700A6EA92 /* AddStockModel.swift */,
+			);
+			path = AddStock;
+			sourceTree = "<group>";
+		};
+		2A552B85227E98D900A6EA92 /* DeleteStock */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */,
+				2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */,
+			);
+			path = DeleteStock;
+			sourceTree = "<group>";
+		};
+		2A552B86227E98E100A6EA92 /* ModifyStock */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */,
+				2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */,
+			);
+			path = ModifyStock;
+			sourceTree = "<group>";
+		};
 		2AD1AF10227B898E009BDA20 = {
 			isa = PBXGroup;
 			children = (
@@ -131,29 +275,19 @@
 		2AD1AF1B227B898E009BDA20 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
-				2AF48B8D227BE787005FBA98 /* Stock.swift */,
-				2AF48B8F227BE7E5005FBA98 /* StockHistory.swift */,
-				2A552B56227E65A000A6EA92 /* GLOBAL.swift */,
-				2AF48B91227BF63B005FBA98 /* StockHistoryInterval.swift */,
 				2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */,
 				2AD1AF1E227B898E009BDA20 /* ViewController.swift */,
 				2AD1AF20227B898E009BDA20 /* Main.storyboard */,
 				2A552B62227E85DF00A6EA92 /* MainTabBarController.swift */,
 				2A552B64227E860A00A6EA92 /* MainModel.swift */,
-				2A552B58227E7D9600A6EA92 /* SettingsTableViewController.swift */,
-				2A552B5A227E7DB500A6EA92 /* SettingsModel.swift */,
-				2A552B5C227E7F1800A6EA92 /* AddStockTableViewCell.swift */,
-				2A552B5E227E7F2600A6EA92 /* DeleteStockTableViewCell.swift */,
-				2A552B60227E7F3800A6EA92 /* ModifyStockTableViewCell.swift */,
-				2A552B66227E87F600A6EA92 /* MyStocksTableViewController.swift */,
-				2A552B68227E883400A6EA92 /* MyStocksModel.swift */,
-				2A552B6A227E889F00A6EA92 /* PortfolioValueTableViewCell.swift */,
-				2A552B6C227E88C800A6EA92 /* StockTableViewCell.swift */,
+				2A552B6E227E8A7000A6EA92 /* StockClasses */,
+				2A552B72227E8B9E00A6EA92 /* MyStocks */,
+				2A552B6F227E8AC700A6EA92 /* Settings */,
+				2A552B75227E8C1300A6EA92 /* Misc. */,
 				2AD1AF26227B8990009BDA20 /* Assets.xcassets */,
 				2AD1AF28227B8990009BDA20 /* LaunchScreen.storyboard */,
 				2AD1AF2B227B8990009BDA20 /* Info.plist */,
 				2AD1AF23227B898E009BDA20 /* FinalProject.xcdatamodeld */,
-				2AD1AF4D227B8CCA009BDA20 /* SwiftyJSON.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -316,15 +450,25 @@
 				2AD1AF1D227B898E009BDA20 /* AppDelegate.swift in Sources */,
 				2AF48B92227BF63B005FBA98 /* StockHistoryInterval.swift in Sources */,
 				2AD1AF25227B898E009BDA20 /* FinalProject.xcdatamodeld in Sources */,
+				2A552B7E227E973700A6EA92 /* StockDetailModel.swift in Sources */,
+				2A552B79227E95E300A6EA92 /* StockDetailViewController.swift in Sources */,
+				2A552B8E227E992E00A6EA92 /* DeleteStockModel.swift in Sources */,
+				2A552B88227E990C00A6EA92 /* AddStockViewController.swift in Sources */,
+				2A552B90227E993E00A6EA92 /* ModifyStockViewController.swift in Sources */,
 				2A552B65227E860A00A6EA92 /* MainModel.swift in Sources */,
 				2A552B6D227E88C800A6EA92 /* StockTableViewCell.swift in Sources */,
 				2A552B5F227E7F2600A6EA92 /* DeleteStockTableViewCell.swift in Sources */,
+				2A552B92227E994A00A6EA92 /* ModifyStockModel.swift in Sources */,
 				2A552B5B227E7DB500A6EA92 /* SettingsModel.swift in Sources */,
+				2A552B8A227E991700A6EA92 /* AddStockModel.swift in Sources */,
 				2A552B6B227E889F00A6EA92 /* PortfolioValueTableViewCell.swift in Sources */,
 				2A552B63227E85DF00A6EA92 /* MainTabBarController.swift in Sources */,
+				2A552B77227E95C500A6EA92 /* PortfolioValueViewController.swift in Sources */,
 				2A552B69227E883400A6EA92 /* MyStocksModel.swift in Sources */,
 				2AF48B8E227BE787005FBA98 /* Stock.swift in Sources */,
+				2A552B8C227E992100A6EA92 /* DeleteStockViewController.swift in Sources */,
 				2AD1AF4E227B8CCB009BDA20 /* SwiftyJSON.swift in Sources */,
+				2A552B7C227E971A00A6EA92 /* PortfolioModel.swift in Sources */,
 				2A552B59227E7D9600A6EA92 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
