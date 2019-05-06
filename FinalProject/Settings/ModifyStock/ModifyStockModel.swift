@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class ModifyStockModel {
+    var mainModel : MainModel?
+    
+    init (mainModel:MainModel) {
+        self.mainModel = mainModel
+    }
+    
+    public func numOfRows() -> Int {return (mainModel?.userData.count)!}
+    
+    public func getNameFor(row:Int) -> String {
+        return (mainModel?.getStockAt(index: row)?.symbol)!
+    }
+    
+}

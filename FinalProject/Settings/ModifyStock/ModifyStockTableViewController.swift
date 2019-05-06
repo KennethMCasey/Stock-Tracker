@@ -1,29 +1,33 @@
 //
-//  SettingsTableViewController.swift
+//  ModifyStockTableViewController.swift
 //  FinalProject
 //
-//  Created by Kenny Casey on 5/4/19.
+//  Created by Kenny Casey on 5/5/19.
 //  Copyright © 2019 Kenny Casey. All rights reserved.
 //
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
-    var mainModel:MainModel?
+class ModifyStockTableViewController: UITableViewController {
+    
+    var mainModel : MainModel?
+    var modifyStockModel : ModifyStockModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let tab = self.tabBarController as? MainTabBarController{
-            mainModel = tab.mainModel
-        }
-        
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        modifyStockModel = ModifyStockModel(mainModel: mainModel!)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,28 +37,14 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return modifyStockModel!.numOfRows()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell?
-        
-        switch indexPath.row {
-        case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "AddStock", for: indexPath ) as! AddStockTableViewCell
-        case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ModifyStock", for: indexPath) as! ModifyStockTableViewCell
-        default:
-            cell = UITableViewCell()
-            print ("Me?")
-            
-        }
-        
-        
-        // Configure the cell...
-
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ModifyStock", for: indexPath) as! ModifyTableViewCell
+        cell.lblName.text = modifyStockModel!.getNameFor(row: indexPath.row)
+        return cell
     }
     
 
@@ -93,24 +83,14 @@ class SettingsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
-        if let view = segue.destination as? AddStockViewController {
-            view.mainModel = self.mainModel
-        }
-        
-        
-        if let view = segue.destination as? ModifyStockTableViewController {
-            view.mainModel = self.mainModel
-        }
-        
     }
-    
+    */
 
 }

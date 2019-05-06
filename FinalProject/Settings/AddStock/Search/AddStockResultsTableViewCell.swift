@@ -1,15 +1,19 @@
 //
-//  DeleteStockTableViewCell.swift
+//  AddStockResultsTableViewCell.swift
 //  FinalProject
 //
-//  Created by Kenny Casey on 5/4/19.
+//  Created by Kenny Casey on 5/5/19.
 //  Copyright © 2019 Kenny Casey. All rights reserved.
 //
 
 import UIKit
 
-class DeleteStockTableViewCell: UITableViewCell {
+class AddStockResultsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblSymbol: UILabel!
+
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

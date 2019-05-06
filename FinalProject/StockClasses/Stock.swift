@@ -9,11 +9,15 @@
 import Foundation
 
 class Stock {
-    private var symbol:String?
-    private var companyName:String?
-    private var shareAmounts:Dictionary<Date, Double>?
-    private var isActive:Bool?
-    private var stockValueHistory:Dictionary<StockHistoryInterval,StockHistory>?
+    public var symbol:String?
+    public var companyName:String?
+    public var shareAmounts:Dictionary<Date, Double>?
+    public var stockValueHistory:Dictionary<StockHistoryInterval,StockHistory>?
+    
+    init(symbol: String, companyName:String){
+        self.symbol = symbol
+        self.companyName = companyName
+    }
     
     public func amountOfSharesForDate(date: Date) -> Double{
         //this function will take shareAmounts.sorted() to organize the date keys.

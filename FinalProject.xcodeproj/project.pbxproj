@@ -11,7 +11,6 @@
 		2A552B59227E7D9600A6EA92 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B58227E7D9600A6EA92 /* SettingsTableViewController.swift */; };
 		2A552B5B227E7DB500A6EA92 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B5A227E7DB500A6EA92 /* SettingsModel.swift */; };
 		2A552B5D227E7F1800A6EA92 /* AddStockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B5C227E7F1800A6EA92 /* AddStockTableViewCell.swift */; };
-		2A552B5F227E7F2600A6EA92 /* DeleteStockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B5E227E7F2600A6EA92 /* DeleteStockTableViewCell.swift */; };
 		2A552B61227E7F3800A6EA92 /* ModifyStockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B60227E7F3800A6EA92 /* ModifyStockTableViewCell.swift */; };
 		2A552B63227E85DF00A6EA92 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B62227E85DF00A6EA92 /* MainTabBarController.swift */; };
 		2A552B65227E860A00A6EA92 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B64227E860A00A6EA92 /* MainModel.swift */; };
@@ -25,12 +24,13 @@
 		2A552B7E227E973700A6EA92 /* StockDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B7D227E973700A6EA92 /* StockDetailModel.swift */; };
 		2A552B88227E990C00A6EA92 /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B87227E990C00A6EA92 /* AddStockViewController.swift */; };
 		2A552B8A227E991700A6EA92 /* AddStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B89227E991700A6EA92 /* AddStockModel.swift */; };
-		2A552B8C227E992100A6EA92 /* DeleteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */; };
-		2A552B8E227E992E00A6EA92 /* DeleteStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */; };
-		2A552B90227E993E00A6EA92 /* ModifyStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */; };
 		2A552B92227E994A00A6EA92 /* ModifyStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */; };
+		2A552B96227F472400A6EA92 /* AddStockResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B95227F472400A6EA92 /* AddStockResultsTableViewCell.swift */; };
+		2A552B98227F6CD300A6EA92 /* AddStockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B97227F6CD300A6EA92 /* AddStockDetailViewController.swift */; };
+		2A552B9A227F6CE300A6EA92 /* AddStockDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B99227F6CE300A6EA92 /* AddStockDetailModel.swift */; };
+		2A552B9E227FC30D00A6EA92 /* ModifyStockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552B9D227FC30D00A6EA92 /* ModifyStockTableViewController.swift */; };
+		2A552BA2227FCBE400A6EA92 /* ModifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A552BA1227FCBE400A6EA92 /* ModifyTableViewCell.swift */; };
 		2AD1AF1D227B898E009BDA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */; };
-		2AD1AF1F227B898E009BDA20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AF1E227B898E009BDA20 /* ViewController.swift */; };
 		2AD1AF22227B898E009BDA20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AF20227B898E009BDA20 /* Main.storyboard */; };
 		2AD1AF25227B898E009BDA20 /* FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AF23227B898E009BDA20 /* FinalProject.xcdatamodeld */; };
 		2AD1AF27227B8990009BDA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AF26227B8990009BDA20 /* Assets.xcassets */; };
@@ -65,7 +65,6 @@
 		2A552B58227E7D9600A6EA92 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2A552B5A227E7DB500A6EA92 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		2A552B5C227E7F1800A6EA92 /* AddStockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockTableViewCell.swift; sourceTree = "<group>"; };
-		2A552B5E227E7F2600A6EA92 /* DeleteStockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockTableViewCell.swift; sourceTree = "<group>"; };
 		2A552B60227E7F3800A6EA92 /* ModifyStockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockTableViewCell.swift; sourceTree = "<group>"; };
 		2A552B62227E85DF00A6EA92 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2A552B64227E860A00A6EA92 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -79,13 +78,14 @@
 		2A552B7D227E973700A6EA92 /* StockDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailModel.swift; sourceTree = "<group>"; };
 		2A552B87227E990C00A6EA92 /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
 		2A552B89227E991700A6EA92 /* AddStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockModel.swift; sourceTree = "<group>"; };
-		2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockViewController.swift; sourceTree = "<group>"; };
-		2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockModel.swift; sourceTree = "<group>"; };
-		2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockViewController.swift; sourceTree = "<group>"; };
 		2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockModel.swift; sourceTree = "<group>"; };
+		2A552B95227F472400A6EA92 /* AddStockResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockResultsTableViewCell.swift; sourceTree = "<group>"; };
+		2A552B97227F6CD300A6EA92 /* AddStockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockDetailViewController.swift; sourceTree = "<group>"; };
+		2A552B99227F6CE300A6EA92 /* AddStockDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockDetailModel.swift; sourceTree = "<group>"; };
+		2A552B9D227FC30D00A6EA92 /* ModifyStockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyStockTableViewController.swift; sourceTree = "<group>"; };
+		2A552BA1227FCBE400A6EA92 /* ModifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyTableViewCell.swift; sourceTree = "<group>"; };
 		2AD1AF19227B898E009BDA20 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2AD1AF1E227B898E009BDA20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2AD1AF21227B898E009BDA20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AD1AF24227B898E009BDA20 /* FinalProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinalProject.xcdatamodel; sourceTree = "<group>"; };
 		2AD1AF26227B8990009BDA20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				2A552B84227E98CA00A6EA92 /* AddStock */,
-				2A552B85227E98D900A6EA92 /* DeleteStock */,
 				2A552B86227E98E100A6EA92 /* ModifyStock */,
 				2A552B70227E8AF100A6EA92 /* TableView */,
 			);
@@ -164,7 +163,6 @@
 			children = (
 				2A552B5C227E7F1800A6EA92 /* AddStockTableViewCell.swift */,
 				2A552B60227E7F3800A6EA92 /* ModifyStockTableViewCell.swift */,
-				2A552B5E227E7F2600A6EA92 /* DeleteStockTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -228,28 +226,39 @@
 		2A552B84227E98CA00A6EA92 /* AddStock */ = {
 			isa = PBXGroup;
 			children = (
-				2A552B87227E990C00A6EA92 /* AddStockViewController.swift */,
-				2A552B89227E991700A6EA92 /* AddStockModel.swift */,
+				2A552B9B227F72E400A6EA92 /* Search */,
+				2A552B9C227F730300A6EA92 /* Detail */,
 			);
 			path = AddStock;
-			sourceTree = "<group>";
-		};
-		2A552B85227E98D900A6EA92 /* DeleteStock */ = {
-			isa = PBXGroup;
-			children = (
-				2A552B8B227E992100A6EA92 /* DeleteStockViewController.swift */,
-				2A552B8D227E992E00A6EA92 /* DeleteStockModel.swift */,
-			);
-			path = DeleteStock;
 			sourceTree = "<group>";
 		};
 		2A552B86227E98E100A6EA92 /* ModifyStock */ = {
 			isa = PBXGroup;
 			children = (
-				2A552B8F227E993E00A6EA92 /* ModifyStockViewController.swift */,
+				2A552B9D227FC30D00A6EA92 /* ModifyStockTableViewController.swift */,
+				2A552BA1227FCBE400A6EA92 /* ModifyTableViewCell.swift */,
 				2A552B91227E994A00A6EA92 /* ModifyStockModel.swift */,
 			);
 			path = ModifyStock;
+			sourceTree = "<group>";
+		};
+		2A552B9B227F72E400A6EA92 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B87227E990C00A6EA92 /* AddStockViewController.swift */,
+				2A552B89227E991700A6EA92 /* AddStockModel.swift */,
+				2A552B95227F472400A6EA92 /* AddStockResultsTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2A552B9C227F730300A6EA92 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2A552B97227F6CD300A6EA92 /* AddStockDetailViewController.swift */,
+				2A552B99227F6CE300A6EA92 /* AddStockDetailModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		2AD1AF10227B898E009BDA20 = {
@@ -276,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				2AD1AF1C227B898E009BDA20 /* AppDelegate.swift */,
-				2AD1AF1E227B898E009BDA20 /* ViewController.swift */,
 				2AD1AF20227B898E009BDA20 /* Main.storyboard */,
 				2A552B62227E85DF00A6EA92 /* MainTabBarController.swift */,
 				2A552B64227E860A00A6EA92 /* MainModel.swift */,
@@ -442,31 +450,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A552B67227E87F600A6EA92 /* MyStocksTableViewController.swift in Sources */,
+				2A552B9E227FC30D00A6EA92 /* ModifyStockTableViewController.swift in Sources */,
 				2A552B57227E65A000A6EA92 /* GLOBAL.swift in Sources */,
-				2AD1AF1F227B898E009BDA20 /* ViewController.swift in Sources */,
 				2A552B5D227E7F1800A6EA92 /* AddStockTableViewCell.swift in Sources */,
 				2AF48B90227BE7E5005FBA98 /* StockHistory.swift in Sources */,
+				2A552B9A227F6CE300A6EA92 /* AddStockDetailModel.swift in Sources */,
 				2A552B61227E7F3800A6EA92 /* ModifyStockTableViewCell.swift in Sources */,
 				2AD1AF1D227B898E009BDA20 /* AppDelegate.swift in Sources */,
 				2AF48B92227BF63B005FBA98 /* StockHistoryInterval.swift in Sources */,
 				2AD1AF25227B898E009BDA20 /* FinalProject.xcdatamodeld in Sources */,
+				2A552B96227F472400A6EA92 /* AddStockResultsTableViewCell.swift in Sources */,
 				2A552B7E227E973700A6EA92 /* StockDetailModel.swift in Sources */,
 				2A552B79227E95E300A6EA92 /* StockDetailViewController.swift in Sources */,
-				2A552B8E227E992E00A6EA92 /* DeleteStockModel.swift in Sources */,
 				2A552B88227E990C00A6EA92 /* AddStockViewController.swift in Sources */,
-				2A552B90227E993E00A6EA92 /* ModifyStockViewController.swift in Sources */,
 				2A552B65227E860A00A6EA92 /* MainModel.swift in Sources */,
 				2A552B6D227E88C800A6EA92 /* StockTableViewCell.swift in Sources */,
-				2A552B5F227E7F2600A6EA92 /* DeleteStockTableViewCell.swift in Sources */,
+				2A552BA2227FCBE400A6EA92 /* ModifyTableViewCell.swift in Sources */,
 				2A552B92227E994A00A6EA92 /* ModifyStockModel.swift in Sources */,
 				2A552B5B227E7DB500A6EA92 /* SettingsModel.swift in Sources */,
+				2A552B98227F6CD300A6EA92 /* AddStockDetailViewController.swift in Sources */,
 				2A552B8A227E991700A6EA92 /* AddStockModel.swift in Sources */,
 				2A552B6B227E889F00A6EA92 /* PortfolioValueTableViewCell.swift in Sources */,
 				2A552B63227E85DF00A6EA92 /* MainTabBarController.swift in Sources */,
 				2A552B77227E95C500A6EA92 /* PortfolioValueViewController.swift in Sources */,
 				2A552B69227E883400A6EA92 /* MyStocksModel.swift in Sources */,
 				2AF48B8E227BE787005FBA98 /* Stock.swift in Sources */,
-				2A552B8C227E992100A6EA92 /* DeleteStockViewController.swift in Sources */,
 				2AD1AF4E227B8CCB009BDA20 /* SwiftyJSON.swift in Sources */,
 				2A552B7C227E971A00A6EA92 /* PortfolioModel.swift in Sources */,
 				2A552B59227E7D9600A6EA92 /* SettingsTableViewController.swift in Sources */,

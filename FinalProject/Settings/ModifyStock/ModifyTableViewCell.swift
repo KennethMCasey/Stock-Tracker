@@ -1,18 +1,17 @@
 //
-//  StockTableViewCell.swift
+//  ModifyTableViewCell.swift
 //  FinalProject
 //
-//  Created by Kenny Casey on 5/4/19.
+//  Created by Kenny Casey on 5/5/19.
 //  Copyright © 2019 Kenny Casey. All rights reserved.
 //
 
 import UIKit
 
-class StockTableViewCell: UITableViewCell {
-   public var name:String?
-    public var stock:Stock?
-    
+class ModifyTableViewCell: UITableViewCell {
+
     @IBOutlet weak var lblName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
