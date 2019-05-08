@@ -19,9 +19,12 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
         
-        mainModel = MainModel()
+        
+    
+        mainModel = MainModel(managedContext: managedContext)
     }
     
 

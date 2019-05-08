@@ -16,6 +16,12 @@ class Stock{
     public var shareAmounts:Dictionary<String, Double>?
     public var stockValueHistory:Dictionary<StockHistoryInterval,StockHistory>?
     
+    init(symbol: String){
+        self.symbol = symbol
+        shareAmounts = Dictionary<String,Double>()
+        stockValueHistory = Dictionary<StockHistoryInterval,StockHistory>()
+    }
+    
     init(symbol: String, companyName:String){
         self.symbol = symbol
         self.companyName = companyName
@@ -51,14 +57,26 @@ class Stock{
     
     
     public func valueOfSharesForDate(date: Date) -> Double {
+       
+       
+        
+        
         if stockValueHistory![.day] == nil {
             print("hello me here i should not be here lol")
             stockValueHistory?.updateValue(StockHistory(companySymbol: symbol!, interval: .day), forKey: .day)}
         var actualDate = date
         let cal = Calendar(identifier: .gregorian)
-       while cal.isDateInWeekend(actualDate){actualDate = actualDate.addingTimeInterval(TimeInterval(86400))}
-        let stringDate = getStringDate(date: actualDate)
+         let hourComponent = cal.component(.hour, from: Date())
         
+        let todayComponents:DateComponents = cal.dateComponents([.day, .month], from: Date())
+        let dateComponents = cal.dateComponents([.day, .month], from: date)
+        
+        
+       while cal.isDateInWeekend(actualDate){actualDate = actualDate.addingTimeInterval(TimeInterval(86400))}
+        var stringDate = getStringDate(date: actualDate)
+        if String(hourComponent) < "5" && todayComponents == dateComponents {
+            stringDate = getStringDate(date: actualDate.addingTimeInterval(TimeInterval(-86400)))
+            return  (stockValueHistory?[.day]?.history![stringDate])! * amountOfSharesForDate(date: date)}
         return  (stockValueHistory?[.day]?.history![stringDate])! * amountOfSharesForDate(date: date)
         
         

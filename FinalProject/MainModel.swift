@@ -7,33 +7,60 @@
 //
 
 import Foundation
+import CoreData
 
 class MainModel {
     public var userData:[Stock]
-
+    var managedContext: NSManagedObjectContext
     
-    init (){userData = [Stock]()
+    init (managedContext: NSManagedObjectContext){userData = [Stock]()
+        self.managedContext = managedContext
+        
+        
+        let stockFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StockTemplate")
+        var stocks = try? managedContext.fetch(stockFetch)
+        if stocks != nil {
+            while stocks?.count != 0{
+                var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                let loadedStock = Stock(symbol: loadedStockTemplate.symbol!)
+                loadedStock.shareAmounts = loadedStockTemplate.userData as? Dictionary<String, Double>
+                loadedStock.generateStockHistory(forInterval: .day)
+                userData.append(loadedStock)
+                
+                
+            }
+            
+            
+        }
+        
     }
     
     public func isUnique (stock: Stock?) -> Bool {
         if stock == nil {return false}
         for x in userData { if x.symbol == stock!.symbol {return false} }
         return true
+        
+        
     }
     
     public func addStock(stock: Stock){
-        if userData.isEmpty {
-            
-            
-            
+        for x in userData {if x.symbol == stock.symbol {return}}
+        
+        let stockTemplate = NSManagedObject(entity: StockTemplate.entity(), insertInto: managedContext)
+        stockTemplate.setValue(stock.symbol, forKey: "symbol")
+        stockTemplate.setValue(stock.shareAmounts, forKey: "userData")
+        
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        managedContext.refreshAllObjects()
             userData.append(stock)
             print("added stock sucessfully!")
             return
-        }
-        else {for x in userData {if x.symbol == stock.symbol {return}}
-            userData.append(stock)
-        }
-        
+ 
     }
     
     public func getStockAt(index:Int)->Stock?{

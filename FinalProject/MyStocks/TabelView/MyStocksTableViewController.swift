@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MyStocksTableViewController: UITableViewController {
     
@@ -67,13 +68,24 @@ class MyStocksTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+         
+            
+            
+            let stockFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StockTemplate")
+            var stocks = try? mainModel!.managedContext.fetch(stockFetch)
+            if stocks != nil {
+                while stocks?.count != 0{
+                    var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                    if loadedStockTemplate.symbol == mainModel?.userData[indexPath.row-1].symbol {
+                        mainModel!.managedContext.delete(loadedStockTemplate)
+                    }
+        }
+                
+    }
             mainModel?.userData.remove(at: indexPath.row-1)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -81,6 +93,10 @@ class MyStocksTableViewController: UITableViewController {
         if let actualView = segue.destination as? StockDetailViewController {
         actualView.mainModel = mainModel
             actualView.stockSymbol = myStocksModel?.getNameFor(row: (self.tableView.indexPathForSelectedRow?.row)!)
+        }
+        
+        if let actualView = segue.destination as? PortfolioValueViewController {
+            actualView.mainModel = mainModel
         }
     }
     

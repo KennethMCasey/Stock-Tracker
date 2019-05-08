@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+
 class ModifyStockDetailModel{
     var mainModel:MainModel
     
@@ -30,7 +32,34 @@ class ModifyStockDetailModel{
     
     public func updateValue(symbol: String, numberOfShares:Double, dateObtained:Date){
         mainModel.getStockWith(symbol: symbol)?.shareAmounts?.updateValue(numberOfShares, forKey: mainModel.getStringDate(date:dateObtained))
+        let theUpdatedStock = mainModel.getStockWith(symbol: symbol)
+        
+        let stockFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StockTemplate")
+        var stocks = try? mainModel.managedContext.fetch(stockFetch)
+        if stocks != nil {
+            while stocks?.count != 0{
+                var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                if loadedStockTemplate.symbol == symbol {
+                    mainModel.managedContext.delete(loadedStockTemplate)
+                    
+                    let savingStockTemplate = NSManagedObject(entity: StockTemplate.entity(), insertInto: mainModel.managedContext)
+                    savingStockTemplate.setValue(symbol, forKey: "symbol")
+                    savingStockTemplate.setValue(mainModel.getStockWith(symbol: symbol)!.shareAmounts, forKey: "userData")
+                    
+
+                    do {
+                        try mainModel.managedContext.save()
+                    } catch let error as NSError {
+                        print("Could not save. \(error), \(error.userInfo)")
+                    }
+                    
+                    
+                }
+                mainModel.managedContext.refreshAllObjects()
+                
+            }
     }
     
 }
 
+}
