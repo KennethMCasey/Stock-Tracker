@@ -20,42 +20,47 @@ class AddStockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //inatalizing model
         addStockDetailModel = AddStockDetailModel(mainModel: mainModel!)
         
-        var x = mainModel == nil ? "AddStockDetailViewController mainmodel is nil" : "AddStockDetailViewController mainmodel is  not nil"
-        
-        print (x)
+        //setting up lable
         lblSymbol.text = stock?.symbol
         
+        //setting up date dial
         dialDate.datePickerMode = .date
         dialDate.minimumDate = Date(timeIntervalSinceNow: TimeInterval(-630700000))
         dialDate.maximumDate = Date()
         
+        //setting up textbox
         txtNumberOfShares.placeholder = "???"
 
     }
     
     
     @IBAction func AddStockButtonPressed(_ sender: UIButton) {
-        if !addStockDetailModel!.ValidateNumberOfShares(num: txtNumberOfShares.text) {let alert = UIAlertController(title: "Error:", message: "Please enter a number of shares grater than 0...", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if !addStockDetailModel!.ValidateNumberOfShares(num: txtNumberOfShares.text)
+        {
+            displayStatusMessage(theMessage: "Please enter a number of shares grater than 0...", isError: true)
             return
-        } //error here
-        if !addStockDetailModel!.ValidateDateObtained(date: dialDate.date) {
-            let alert = UIAlertController(title: "Error:", message: "Please enter a valid date", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        }
+        if !addStockDetailModel!.ValidateDateObtained(date: dialDate.date)
+        {
+            displayStatusMessage(theMessage: "Please enter a valid date", isError: true)
             return
-        } //error here
+        }
         if !addStockDetailModel!.ValidateUniqueStock(stock: stock) {
-            let alert = UIAlertController(title: "Error:", message: "Stock Already Exists", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            displayStatusMessage(theMessage: "Stock Already Exists", isError: true)
             return
         }//error here
         addStock()
-        let alert = UIAlertController(title: "Action Complete", message: "Stock has been added.", preferredStyle: .alert)
+       displayStatusMessage(theMessage: "Stock has been added.", isError: false)
+    }
+    
+    
+    private func displayStatusMessage(theMessage:String, isError:Bool)
+    {
+        let alert = UIAlertController(title: isError ? "Error:" : "Action Complete", message: theMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -63,8 +68,8 @@ class AddStockDetailViewController: UIViewController {
     
     private func addStock(){
         let numberOfShares = Double(txtNumberOfShares.text!)
-        let dateObtained = dialDate.date
-        addStockDetailModel?.addStock(stock: stock!, numberOfShares: numberOfShares!, dateObtained: dateObtained)
+        let dateObtained = mainModel?.getStringDate(date: dialDate.date)
+        addStockDetailModel?.addStock(stock: stock!, numberOfShares: numberOfShares!, dateObtained: dateObtained!)
     }
     
     func bumpBack()->Void{ self.navigationController?.popViewController(animated: true)}

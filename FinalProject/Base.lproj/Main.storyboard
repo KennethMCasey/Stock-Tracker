@@ -79,22 +79,13 @@
                     <view key="view" contentMode="scaleToFill" id="DwT-pz-2Kw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlaceHolder for Portfolio Value " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-XC-nct">
-                                <rect key="frame" x="74" y="240" width="239" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Iv-lP-eqH"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4U-Oq-Urv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-1493"/>
+            <point key="canvasLocation" x="2568.8000000000002" y="-1493.7031484257873"/>
         </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="ZWW-j2-SJR">
@@ -104,26 +95,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlaceHolder For StockNameHere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY4-do-77u">
-                                <rect key="frame" x="73" y="249" width="253" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieT-l8-3SH" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="213"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP0-UR-JNs">
+                                <rect key="frame" x="54" y="285" width="30" height="30"/>
+                                <state key="normal" title="Day"/>
+                                <connections>
+                                    <action selector="DayButtonPressed:" destination="Crt-FV-9qg" eventType="touchUpInside" id="LqV-Ge-In1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlJ-Cv-DAR">
+                                <rect key="frame" x="167" y="285" width="39" height="30"/>
+                                <state key="normal" title="Week"/>
+                                <connections>
+                                    <action selector="WeekButtonPressed:" destination="Crt-FV-9qg" eventType="touchUpInside" id="eiU-Oh-iqO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vQ-rQ-iPz">
+                                <rect key="frame" x="295" y="285" width="44" height="30"/>
+                                <state key="normal" title="Month"/>
+                                <connections>
+                                    <action selector="MonthButtonPressed:" destination="Crt-FV-9qg" eventType="touchUpInside" id="CC6-VU-T2x"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-ST-m3F">
+                                <rect key="frame" x="1" y="323" width="373" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="578886963.38300598">
+                                    <!--2019-05-07 01:56:03 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ieT-l8-3SH" firstAttribute="trailing" secondItem="siF-fD-gQG" secondAttribute="trailing" id="23u-W3-OXt"/>
+                            <constraint firstItem="GoW-ST-m3F" firstAttribute="top" secondItem="4vQ-rQ-iPz" secondAttribute="bottom" constant="8" id="9b3-Vk-sjN"/>
+                            <constraint firstItem="GoW-ST-m3F" firstAttribute="top" secondItem="FP0-UR-JNs" secondAttribute="bottom" constant="8" id="9kI-Bj-Mga"/>
+                            <constraint firstItem="4vQ-rQ-iPz" firstAttribute="top" secondItem="ieT-l8-3SH" secondAttribute="bottom" constant="8" id="Ew9-QK-5Db"/>
+                            <constraint firstItem="siF-fD-gQG" firstAttribute="trailing" secondItem="4vQ-rQ-iPz" secondAttribute="trailing" constant="36" id="Iz1-VC-CdR"/>
+                            <constraint firstItem="4vQ-rQ-iPz" firstAttribute="leading" secondItem="RlJ-Cv-DAR" secondAttribute="trailing" constant="89" id="Kpy-2h-d7O"/>
+                            <constraint firstItem="RlJ-Cv-DAR" firstAttribute="top" secondItem="ieT-l8-3SH" secondAttribute="bottom" constant="8" id="LKJ-yY-UOP"/>
+                            <constraint firstItem="FP0-UR-JNs" firstAttribute="top" secondItem="ieT-l8-3SH" secondAttribute="bottom" constant="8" id="PaU-TJ-k8Y"/>
+                            <constraint firstItem="FP0-UR-JNs" firstAttribute="leading" secondItem="siF-fD-gQG" secondAttribute="leading" constant="54" id="TGb-G3-YJv"/>
+                            <constraint firstItem="GoW-ST-m3F" firstAttribute="leading" secondItem="Bk8-eA-OMC" secondAttribute="leading" constant="1" id="XgG-yV-oZb"/>
+                            <constraint firstItem="ieT-l8-3SH" firstAttribute="leading" secondItem="siF-fD-gQG" secondAttribute="leading" id="ZHo-iH-LPj"/>
+                            <constraint firstItem="siF-fD-gQG" firstAttribute="bottom" secondItem="GoW-ST-m3F" secondAttribute="bottom" constant="79" id="eOM-fo-0Yg"/>
+                            <constraint firstItem="RlJ-Cv-DAR" firstAttribute="leading" secondItem="FP0-UR-JNs" secondAttribute="trailing" constant="83" id="eb9-VR-jkV"/>
+                            <constraint firstItem="4vQ-rQ-iPz" firstAttribute="leading" secondItem="RlJ-Cv-DAR" secondAttribute="trailing" constant="89" id="fo9-E7-zVL"/>
+                            <constraint firstItem="siF-fD-gQG" firstAttribute="trailing" secondItem="GoW-ST-m3F" secondAttribute="trailing" constant="1" id="gCH-hK-FOs"/>
+                            <constraint firstItem="GoW-ST-m3F" firstAttribute="top" secondItem="FP0-UR-JNs" secondAttribute="bottom" constant="8" id="kzV-Y8-puF"/>
+                            <constraint firstItem="FP0-UR-JNs" firstAttribute="top" secondItem="ieT-l8-3SH" secondAttribute="bottom" constant="8" id="p8Y-4d-lT5"/>
+                            <constraint firstItem="RlJ-Cv-DAR" firstAttribute="leading" secondItem="FP0-UR-JNs" secondAttribute="trailing" constant="83" id="pqq-DD-yO8"/>
+                            <constraint firstItem="ieT-l8-3SH" firstAttribute="top" secondItem="siF-fD-gQG" secondAttribute="top" id="qzS-lO-oNN"/>
+                            <constraint firstItem="GoW-ST-m3F" firstAttribute="top" secondItem="RlJ-Cv-DAR" secondAttribute="bottom" constant="8" id="v3z-fD-vjl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="siF-fD-gQG"/>
                     </view>
+                    <connections>
+                        <outlet property="dialDate" destination="GoW-ST-m3F" id="6iL-K2-21i"/>
+                        <outlet property="lineGraph" destination="ieT-l8-3SH" id="4Ne-Di-8oM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81b-Kk-9x1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="-733"/>
+            <point key="canvasLocation" x="2568.8000000000002" y="-733.5832083958021"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="MmN-fa-jQB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tMn-sy-DJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="3Jf-Si-vfL" customClass="MainTabBarController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WF5-Uj-6cF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -135,6 +175,7 @@
                         <segue destination="ebt-RT-WGG" kind="relationship" relationship="viewControllers" id="Ayf-3n-3Qq"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMn-sy-DJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-164" y="-90"/>
         </scene>
@@ -251,68 +292,75 @@
             </objects>
             <point key="canvasLocation" x="1737" y="1225"/>
         </scene>
-        <!--Modify Stock View Controller-->
+        <!--Modify Stock Detail View Controller-->
         <scene sceneID="6pP-6W-KuN">
             <objects>
-                <viewController id="xNU-Oz-y4v" customClass="ModifyStockViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xNU-Oz-y4v" customClass="ModifyStockDetailViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UqW-N1-9tO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Stock: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-lq-btc">
-                                <rect key="frame" x="19" y="86" width="141" height="38"/>
+                                <rect key="frame" x="7" y="64" width="141" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="q0i-Db-MXk">
-                                <rect key="frame" x="0.0" y="218" width="375" height="327"/>
+                                <rect key="frame" x="0.0" y="159" width="375" height="327"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578778015.32813895">
                                     <!--2019-05-05 19:40:15 +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Shares:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-k9-293">
-                                <rect key="frame" x="16" y="145" width="144" height="29"/>
+                                <rect key="frame" x="4" y="102" width="144" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DO ME" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-Lg-grn">
-                                <rect key="frame" x="180" y="144" width="118" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-Lg-grn">
+                                <rect key="frame" x="173" y="102" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DO ME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csY-MG-hsN">
-                                <rect key="frame" x="156" y="95" width="54" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*DisplaySymbolHere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csY-MG-hsN">
+                                <rect key="frame" x="191" y="73" width="158" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YD-DL-BUH">
-                                <rect key="frame" x="19" y="205" width="68" height="21"/>
+                                <rect key="frame" x="7" y="139" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zQ-bM-86R">
-                                <rect key="frame" x="93" y="547" width="152" height="45"/>
+                                <rect key="frame" x="93" y="488" width="152" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update Value On Date"/>
                                 <connections>
                                     <action selector="AddStockButtonPressed:" destination="rKZ-28-v2r" eventType="touchUpInside" id="pPl-dr-fG4"/>
+                                    <action selector="UpdateButtonPressed:" destination="xNU-Oz-y4v" eventType="touchUpInside" id="LqV-SS-Kf9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IO6-LX-EOv"/>
                     </view>
+                    <connections>
+                        <outlet property="btnUpdateValue" destination="6zQ-bM-86R" id="qH9-y6-5a1"/>
+                        <outlet property="dialDate" destination="q0i-Db-MXk" id="8Tf-rG-Xk6"/>
+                        <outlet property="lblSymbol" destination="csY-MG-hsN" id="Tsh-uV-ReK"/>
+                        <outlet property="txtNumOfShares" destination="w2z-Lg-grn" id="FmO-5B-dl5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2o-NN-1sS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

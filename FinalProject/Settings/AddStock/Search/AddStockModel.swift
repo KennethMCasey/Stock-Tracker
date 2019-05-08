@@ -12,9 +12,12 @@ import Foundation
 class AddStockModel{
 
     public var searchResults : [Stock]?
+    public var mainModel : MainModel?
     
     
-    init () {searchResults = [Stock]()}
+    init (mainModel: MainModel ) {
+        self.mainModel = mainModel
+        searchResults = [Stock]()}
     
     
     public func loadResults(searchTerm:String, completionHandler: (()->())?){

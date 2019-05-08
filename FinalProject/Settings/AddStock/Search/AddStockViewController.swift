@@ -18,13 +18,9 @@ class AddStockViewController: UIViewController, UISearchBarDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addStockModel = AddStockModel()
-        
+        addStockModel = AddStockModel(mainModel: mainModel!)
     }
     
 
