@@ -44,15 +44,15 @@ class MyStocksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
         if indexPath.row == 0 {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "PortfolioValue", for: indexPath) as! PortfolioValueTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PortfolioValue", for: indexPath) as! PortfolioValueTableViewCell
             return cell
         }
         else {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "Stock", for: indexPath) as! StockTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Stock", for: indexPath) as! StockTableViewCell
             cell.lblName.text = myStocksModel?.getNameFor(row: indexPath.row)
             return cell
         }
-        return UITableViewCell()
+        
     }
     
 
@@ -75,7 +75,7 @@ class MyStocksTableViewController: UITableViewController {
             var stocks = try? mainModel!.managedContext.fetch(stockFetch)
             if stocks != nil {
                 while stocks?.count != 0{
-                    var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                    let loadedStockTemplate =  stocks?.popLast() as! StockTemplate
                     if loadedStockTemplate.symbol == mainModel?.userData[indexPath.row-1].symbol {
                         mainModel!.managedContext.delete(loadedStockTemplate)
                     }

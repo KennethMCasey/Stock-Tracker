@@ -53,8 +53,7 @@ class PortfolioModel {
                 lineDataEntry.append(dataEntry)
             }
             
-        case.month:
-            print("F")
+       
         }
         let chartDataSet = LineChartDataSet(entries: lineDataEntry, label: "Value")
         let chartData = LineChartData()
@@ -73,17 +72,44 @@ class PortfolioModel {
     
     func getLablesFor(date: Date, interval:StockHistoryInterval) ->IndexAxisValueFormatter {
         
-        var format = DateFormatter()
+        let format = DateFormatter()
         format.dateFormat = "MM-dd"
-        var dateArray = mainModel?.getValidDatesFor(endDate: date, interval: interval)
+        let dateArray = mainModel?.getValidDatesFor(endDate: date, interval: interval)
         var stringArray:[String] = []
         
         for date in dateArray! {
-            var cal = Calendar(identifier: .gregorian)
+            let cal = Calendar(identifier: .gregorian)
             let newDate = cal.date(from: cal.dateComponents([.month, .day], from: date))
             stringArray.append(format.string(from: newDate!))
         }
         return IndexAxisValueFormatter(values:  stringArray)
+    }
+    
+    
+    public func checkValidData(interval:StockHistoryInterval)->Bool{
+        for stock in (mainModel?.userData)! {
+            if (stock.stockValueHistory![interval]?.isFirstNil())! {return false}
+            if (stock.stockValueHistory![interval]?.isHistoryNil())! {return false}
+        }
+        return true
+    }
+    
+    
+    
+    public func reloadDataFor(interval:StockHistoryInterval){
+        for stock in (mainModel?.userData)! {
+         stock.stockValueHistory![interval]?.getStockData()
+        }
+        
+        
+    }
+    
+    public func getSharesForDate(date:Date) -> String {
+        var val = 0.0
+        for stock in (mainModel?.userData)!{
+            val += stock.amountOfSharesForDate(date: date)}
+        
+        return String(val)
     }
     
     

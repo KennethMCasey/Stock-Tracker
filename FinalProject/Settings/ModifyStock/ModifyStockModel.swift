@@ -18,7 +18,7 @@ class ModifyStockModel {
     public func numOfRows() -> Int {return (mainModel?.userData.count)!}
     
     public func getNameFor(row:Int) -> String {
-        return (mainModel?.getStockAt(index: row)?.symbol)!
+        return (mainModel?.getStockAt(index: row).symbol)!
     }
     
 }

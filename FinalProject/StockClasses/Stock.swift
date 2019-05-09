@@ -35,7 +35,7 @@ class Stock{
     
     
     
-   private func amountOfSharesForDate(date: Date) -> Double{
+   public func amountOfSharesForDate(date: Date) -> Double{
         //this function will take shareAmounts.sorted() to organize the date keys.
         //it will look to see if the date entered is a key.
         //if the date that is entered is a key then you can return the value from the dictonary
@@ -57,10 +57,7 @@ class Stock{
     
     
     public func valueOfSharesForDate(date: Date) -> Double {
-       
-       
-        
-        
+
         if stockValueHistory![.day] == nil {
             print("hello me here i should not be here lol")
             stockValueHistory?.updateValue(StockHistory(companySymbol: symbol!, interval: .day), forKey: .day)}
@@ -76,8 +73,8 @@ class Stock{
         var stringDate = getStringDate(date: actualDate)
         if String(hourComponent) < "5" && todayComponents == dateComponents {
             stringDate = getStringDate(date: actualDate.addingTimeInterval(TimeInterval(-86400)))
-            return  (stockValueHistory?[.day]?.history![stringDate])! * amountOfSharesForDate(date: date)}
-        return  (stockValueHistory?[.day]?.history![stringDate])! * amountOfSharesForDate(date: date)
+            return  ((stockValueHistory?[.day]?.getValueForDate(date: stringDate))!) * amountOfSharesForDate(date: date)}
+        return  ((stockValueHistory?[.day]?.getValueForDate(date: stringDate))!) * amountOfSharesForDate(date: date)
         
         
         
@@ -96,13 +93,12 @@ class Stock{
         var numDaysWithShares = 0.0
         
         var stringDate = getStringDate(date: actualDate)
-        var theKeys = shareAmounts?.keys.sorted()
         
         
         if shareAmounts![stringDate] != nil {
             runningTotalOfShares += shareAmounts![stringDate]!
             numDaysWithShares += 1
-            print("found date with shares!")
+            
         }
             actualDate = actualDate.addingTimeInterval(TimeInterval(-86400))
             stringDate = getStringDate(date: actualDate)
@@ -113,7 +109,7 @@ class Stock{
             }
             actualDate = actualDate.addingTimeInterval(TimeInterval(-86400))
             stringDate = getStringDate(date: actualDate)
-            print("found date with shares!")
+          
         }
         
         return numDaysWithShares != 0.0 ? runningTotalOfShares / numDaysWithShares : 0
@@ -123,36 +119,17 @@ class Stock{
     
     public func valueOfSharesForWeek(date:Date) -> Double{
         let stringDate = getStringDate(date: date)
-        let theKeys = stockValueHistory![.week]?.history?.keys.sorted()
+        let theKeys = stockValueHistory![.week]?.getSortedKeys()
         for i in 0...(theKeys?.count)!-1 {
             if stringDate <= theKeys![(theKeys?.count)! - i-1] {
-                print("found key!")
-                return (stockValueHistory![.week]?.history![theKeys![(theKeys?.count)! - i-1]])! * amountOfSharesForWeek(date:date)
+                return (stockValueHistory![.week]?.getValueForDate(date: theKeys![(theKeys?.count)! - i-1]))! * amountOfSharesForWeek(date:date)
             }
             
         }
-       return (stockValueHistory![.week]?.history![theKeys![(theKeys?.count)!-1]])! * amountOfSharesForWeek(date:date)}
+        return (stockValueHistory![.week]?.getValueForDate(date: theKeys![(theKeys?.count)! - 1]))! * amountOfSharesForWeek(date:date)}
     
-    public func amountOfSharesForMonth(date:Date) -> Double{
-        
-        if stockValueHistory![.month] == nil {
-            print("hello me here i should not be here lol")
-        }
-        
-        let cal = Calendar(identifier: .gregorian)
-        var actualDate = date
-        var runningTotalOfShares = 0.0
-        var numDaysWithShares = 0.0
-        
-        
-        
-        
-        
-        
-        
-        return 0}
     
-    public func valueOfSharesForMonth(date:Date) -> Double{return 0}
+
     
     
     
@@ -160,8 +137,8 @@ class Stock{
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let cal = Calendar(identifier: .gregorian)
-        var newDate = cal.date(from: cal.dateComponents([.year ,.month, .day], from: date))
-        var newDateString = format.string(from: newDate!)
+        let newDate = cal.date(from: cal.dateComponents([.year ,.month, .day], from: date))
+        let newDateString = format.string(from: newDate!)
         return newDateString
         
     }

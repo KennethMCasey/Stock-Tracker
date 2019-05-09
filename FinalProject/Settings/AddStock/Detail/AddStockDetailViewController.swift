@@ -29,7 +29,7 @@ class AddStockDetailViewController: UIViewController {
         
         //setting up date dial
         dialDate.datePickerMode = .date
-        dialDate.minimumDate = Date(timeIntervalSinceNow: TimeInterval(-630700000))
+        dialDate.minimumDate = Date(timeIntervalSinceNow: TimeInterval(-11830000))
         dialDate.maximumDate = Date()
         
         //setting up textbox

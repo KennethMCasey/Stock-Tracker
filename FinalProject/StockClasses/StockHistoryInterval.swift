@@ -11,6 +11,5 @@ import Foundation
 enum StockHistoryInterval {
     case day
     case week
-    case month
 }
 

@@ -11,7 +11,7 @@ import Foundation
 class StockHistory{
     private var interval:StockHistoryInterval
     private var companySymbol:String
-    public var history:Dictionary<String,Double>?
+    private var history:Dictionary<String,Double>?
     
     init(companySymbol:String, interval:StockHistoryInterval){
         self.companySymbol = companySymbol
@@ -20,6 +20,16 @@ class StockHistory{
         getStockData()
         }
 
+    
+    public func getValueForDate(date:String) -> Double {return history?[date] ?? 0.0}
+    
+    public func getSortedKeys() -> [String] {return history?.keys.sorted() ?? [""]}
+    
+    public func isFirstNil() -> Bool {return history?.keys.first == nil}
+    
+    public func isHistoryNil()-> Bool {return history == nil}
+    
+    
     private func getURL()->URL?{
         let baseURL = "https://www.alphavantage.co/query?"
         var urlComponents = URLComponents(string: baseURL)
@@ -28,8 +38,6 @@ class StockHistory{
         case .day:
             queryItemsArray.append(URLQueryItem(name: "function", value: "TIME_SERIES_DAILY"))
             queryItemsArray.append(URLQueryItem(name: "outputsize", value: "compact"))
-        case .month:
-            queryItemsArray.append(URLQueryItem(name: "function", value: "TIME_SERIES_MONTHLY"))
         case .week:
             queryItemsArray.append(URLQueryItem(name: "function", value: "TIME_SERIES_WEEKLY"))
         }
@@ -40,7 +48,7 @@ class StockHistory{
     }
     
     
-    public func getStockData() -> Void {
+    public func getStockData()  {
         self.history?.removeAll()
         let theURL = getURL()
         let session = URLSession(configuration: .ephemeral)
@@ -48,13 +56,13 @@ class StockHistory{
             if let _ = error {print("Error Here")}
                 else if let recivedData = data {
                 let parsedData = try? JSON(data: recivedData)
-                print (parsedData)
                 var theKeys:Dictionary<String,JSON>.Keys?
-                var dateFormat = DateFormatter()
+                let dateFormat = DateFormatter()
                 dateFormat.dateFormat = "yyyy-mm-dd"
                 switch self.interval{
                 case .day:
                     theKeys = parsedData!["Time Series (Daily)"].dictionary?.keys
+                    if theKeys != nil {
                     var stringKeys = [String]()
                     for key in theKeys!{
                         stringKeys.append(key)
@@ -63,10 +71,12 @@ class StockHistory{
                         let val = parsedData!["Time Series (Daily)"][key]["4. close"].floatValue
                         self.history?.updateValue(Double(val), forKey: key)
                     }
+                    }
                     
                     
                 case .week:
                     theKeys = parsedData!["Weekly Time Series"].dictionary?.keys
+                    if theKeys != nil{
                     var stringKeys = [String]()
                     for key in theKeys!{
                         stringKeys.append(key)
@@ -75,20 +85,13 @@ class StockHistory{
                         let val = parsedData!["Weekly Time Series"][key]["4. close"].floatValue
                         self.history?.updateValue(Double(val), forKey:key)
                     }
-                case .month:
-                    theKeys = parsedData!["Monthly Time Series"].dictionary?.keys
-                    var stringKeys = [String]()
-                    for key in theKeys!{
-                        stringKeys.append(key)
                     }
-                    for key in stringKeys{
-                        let val = parsedData!["Monthly Time Series"][key]["4. close"].floatValue
-                        self.history?.updateValue(Double(val), forKey: key)
-                    }
+                    
                 }
             }
             })
         task.resume()
+        
     }
         }
         

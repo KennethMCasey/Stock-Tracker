@@ -13,11 +13,14 @@ class AddStockModel{
 
     public var searchResults : [Stock]?
     public var mainModel : MainModel?
+  
     
     
     init (mainModel: MainModel ) {
         self.mainModel = mainModel
-        searchResults = [Stock]()}
+        searchResults = [Stock]()
+        
+    }
     
     
     public func loadResults(searchTerm:String, completionHandler: (()->())?){

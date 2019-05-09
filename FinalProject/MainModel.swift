@@ -13,6 +13,11 @@ class MainModel {
     public var userData:[Stock]
     var managedContext: NSManagedObjectContext
     
+    init(){
+        userData = [Stock]()
+        managedContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    }
+    
     init (managedContext: NSManagedObjectContext){userData = [Stock]()
         self.managedContext = managedContext
         
@@ -21,18 +26,14 @@ class MainModel {
         var stocks = try? managedContext.fetch(stockFetch)
         if stocks != nil {
             while stocks?.count != 0{
-                var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                let loadedStockTemplate =  stocks?.popLast() as! StockTemplate
                 let loadedStock = Stock(symbol: loadedStockTemplate.symbol!)
                 loadedStock.shareAmounts = loadedStockTemplate.userData as? Dictionary<String, Double>
                 loadedStock.generateStockHistory(forInterval: .day)
+                loadedStock.generateStockHistory(forInterval: .week)
                 userData.append(loadedStock)
-                
-                
             }
-            
-            
-        }
-        
+        } 
     }
     
     public func isUnique (stock: Stock?) -> Bool {
@@ -58,27 +59,18 @@ class MainModel {
         }
         managedContext.refreshAllObjects()
             userData.append(stock)
-            print("added stock sucessfully!")
             return
  
     }
     
-    public func getStockAt(index:Int)->Stock?{
-        return userData[index]
-    }
     
     public func getStockWith(symbol:String)->Stock?{
-        if userData.isEmpty {
-            print("empty user data")
-            return nil}
-        for x in userData {if x.symbol == symbol {
-            print("found stock")
-            return x}}
-        print ("COULD NOT FIND ME")
-            return nil
+        if userData.isEmpty {return nil}
+        for x in userData {if x.symbol == symbol {return x}}
+        return nil
     }
     
-    
+    public func getStockAt(index:Int) ->Stock{ return (userData[index] ) }
     
     public func getValidDatesFor(endDate:Date, interval:StockHistoryInterval) -> [Date]{
         
@@ -105,9 +97,6 @@ class MainModel {
                 dateArray.append(addingDate)
             }
             dateArray.reverse()
-            
-        case .month:
-            print("F")
         }
         return dateArray
     }
@@ -116,8 +105,8 @@ class MainModel {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let cal = Calendar(identifier: .gregorian)
-        var newDate = cal.date(from: cal.dateComponents([.year ,.month, .day], from: date))
-        var newDateString = format.string(from: newDate!)
+        let newDate = cal.date(from: cal.dateComponents([.year ,.month, .day], from: date))
+        let newDateString = format.string(from: newDate!)
         return newDateString
         
     }

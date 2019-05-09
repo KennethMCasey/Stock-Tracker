@@ -26,13 +26,20 @@ class AddStockViewController: UIViewController, UISearchBarDelegate, UITableView
 
     
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String?) {
-        addStockModel?.loadResults(searchTerm: searchText!){self.tableView.reloadData()}
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        addStockModel?.loadResults(searchTerm: searchText){self.tableView.reloadData()}
     }
     
    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        addStockModel?.loadResults(searchTerm: self.searchBar.text ?? ""){self.tableView.reloadData()}
+    }
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+         addStockModel?.loadResults(searchTerm: self.searchBar.text ?? ""){self.tableView.reloadData()}
+    }
+  
+
     
     
     //MARK: - TableView

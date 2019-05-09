@@ -32,13 +32,12 @@ class ModifyStockDetailModel{
     
     public func updateValue(symbol: String, numberOfShares:Double, dateObtained:Date){
         mainModel.getStockWith(symbol: symbol)?.shareAmounts?.updateValue(numberOfShares, forKey: mainModel.getStringDate(date:dateObtained))
-        let theUpdatedStock = mainModel.getStockWith(symbol: symbol)
         
         let stockFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "StockTemplate")
         var stocks = try? mainModel.managedContext.fetch(stockFetch)
         if stocks != nil {
             while stocks?.count != 0{
-                var loadedStockTemplate =  stocks?.popLast() as! StockTemplate
+                let loadedStockTemplate =  stocks?.popLast() as! StockTemplate
                 if loadedStockTemplate.symbol == symbol {
                     mainModel.managedContext.delete(loadedStockTemplate)
                     

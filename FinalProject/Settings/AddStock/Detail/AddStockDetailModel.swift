@@ -35,9 +35,7 @@ class AddStockDetailModel {
     public func addStock(stock: Stock, numberOfShares:Double, dateObtained:String){
         stock.shareAmounts?.updateValue(numberOfShares, forKey:  dateObtained)
         stock.generateStockHistory(forInterval: .day)
-        stock.generateStockHistory(forInterval: .month)
         stock.generateStockHistory(forInterval: .week)
         mainModel.addStock(stock: stock)
-        print(mainModel.getStockWith(symbol: stock.symbol!)?.shareAmounts?.count)
     }
 }
