@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Charts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2AD1AF2F227B8990009BDA20"
+               BuildableName = "FinalProjectTests.xctest"
+               BlueprintName = "FinalProjectTests"
+               ReferencedContainer = "container:../../FinalProject.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -40,6 +54,15 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F2749BD5443C1CB5FE2080C2"
+            BuildableName = "ChartsTests.xctest"
+            BlueprintName = "ChartsTests"
+            ReferencedContainer = "container:Charts.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -78,6 +101,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F2749BD5443C1CB5FE2080C2"
+            BuildableName = "ChartsTests.xctest"
+            BlueprintName = "ChartsTests"
+            ReferencedContainer = "container:Charts.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
